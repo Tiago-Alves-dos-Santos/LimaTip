@@ -1,0 +1,33 @@
+// Fonts
+@import "fonts.scss";
+$theme-colors: (
+  "primary":    #0d6efd,
+  "secondary":  #6c757d,
+  "success":    #198754,
+  "info":       #0dcaf0,
+  "warning":    #ffc107,
+  "danger":     #dc3545,
+  "light":      #f8f9fa,
+  "dark":       #212529,
+  "red":    #dc3545,
+  'blue': #0d6efd,
+  'pink':#d63384,
+);
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 900px;
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+//layouts
+@import "layout.scss";
+//pages
+@import "pages.scss";

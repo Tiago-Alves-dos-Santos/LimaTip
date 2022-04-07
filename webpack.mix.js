@@ -14,4 +14,7 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css').options({
         processCssUrls: true
-    });
+    })
+    .sass('resources/sass/single/login.scss', 'public/css').options({
+        processCssUrls: true
+    });;

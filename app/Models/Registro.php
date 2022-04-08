@@ -11,4 +11,5 @@ class Registro extends Model
     use HasFactory;
     use SoftDeletes;
     protected $table = 'registros';
+    protected $guarded = [];
 }

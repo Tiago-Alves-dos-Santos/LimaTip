@@ -15,7 +15,6 @@ class CreateDisponibilidadesTable extends Migration
     {
         Schema::create('disponibilidades', function (Blueprint $table) {
             $table->id();
-            $table->string('telefone', 50)->nullable();
             $table->dateTime('disponibilidade');
             $table->enum('disponivel', ['sim', 'nao']);
             $table->enum('disponivel_status', ['sim', 'nao']);

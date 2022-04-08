@@ -11,4 +11,5 @@ class Disponibilidade extends Model
     use HasFactory;
     use SoftDeletes;
     protected $table = 'disponibilidades';
+    protected $guarded = [];
 }

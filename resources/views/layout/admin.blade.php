@@ -15,7 +15,7 @@
             <a class="nav-link active" aria-current="page" href="{{route('view.admin.home')}}" id="page_inicio">Início</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('view.admin.profile')}}" id="page_profilel">Perfil</a>
+            <a class="nav-link" href="{{route('view.admin.profile')}}" id="page_profile">Perfil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Sair</a>

@@ -24,4 +24,7 @@ Route::get('/admin', function () {
 
 Route::get('/admin/home', function () {
     return view('admin.home');
-});
+})->name('view.admin.home');
+Route::get('/admin/profile', function () {
+    return view('admin.profile');
+})->name('view.admin.profile');

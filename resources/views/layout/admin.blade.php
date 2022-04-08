@@ -12,10 +12,10 @@
       <div class="collapse navbar-collapse d-sm-flex justify-content-sm-end" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#" id="page_inicio">Início</a>
+            <a class="nav-link active" aria-current="page" href="{{route('view.admin.home')}}" id="page_inicio">Início</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" id="page_perfil">Perfil</a>
+            <a class="nav-link" href="{{route('view.admin.profile')}}" id="page_profilel">Perfil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Sair</a>

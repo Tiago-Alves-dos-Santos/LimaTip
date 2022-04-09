@@ -15,11 +15,11 @@ class CreateConfiguracaosTable extends Migration
     {
         Schema::create('configuracaos', function (Blueprint $table) {
             $table->id();
-            $table->integer('limite_registros');
-            $table->double('valor_pix', 10, 2);
-            $table->string('chave_pix', 255);
-            $table->text('document');
-            $table->text('document_term');
+            $table->integer('limite_registros')->nullable();
+            $table->double('valor_pix', 10, 2)->nullable();
+            $table->string('chave_pix', 255)->nullable();
+            $table->text('document')->nullable();
+            $table->text('document_term')->nullable();
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at', $precision = 0);
         });

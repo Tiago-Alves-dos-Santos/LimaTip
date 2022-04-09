@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserTableSeeder::class);
         $this->call(ConfiguracaoTableSeeder::class);
         $this->call(DisponibilidadeTableSeeder::class);
+        \App\Models\Registro::factory(100)->create();
     }
 }

@@ -3,15 +3,19 @@
     <form wire:submit.prevent='save' method="POST" enctype="multipart/form-data" class="needs-validation">
         @csrf
         <div class="row">
-            <div class="col-md-4 align-self-end">
+            <div class="col-md-3 align-self-end">
                 <label for="">Limite de registros</label>
                 <input type="number" step="1" class="form-control @error('limite_registros') is-invalid @enderror" min="0" wire:model.defer="limite_registros">
             </div>
-            <div class="col-md-4 align-self-end">
+            <div class="col-md-3 align-self-end">
+                <label for="">Mostrar por pagina</label>
+                <input type="number" step="1" class="form-control @error('mostrar_por_pagina') is-invalid @enderror" min="0" wire:model.defer="mostrar_por_pagina">
+            </div>
+            <div class="col-md-3 align-self-end">
                 <label for="">Valor do pix</label>
                 <input type="text" class="form-control maskMoney @error('valor_pix') is-invalid @enderror" wire:model.defer="valor_pix">
             </div>
-            <div class="col-md-4 align-self-end">
+            <div class="col-md-3 align-self-end">
                 <label for="">Chave pix</label>
                 <input type="text" class="form-control @error('chave_pix') is-invalid @enderror" wire:model.defer="chave_pix">
             </div>

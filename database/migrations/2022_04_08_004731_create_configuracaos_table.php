@@ -16,6 +16,7 @@ class CreateConfiguracaosTable extends Migration
         Schema::create('configuracaos', function (Blueprint $table) {
             $table->id();
             $table->integer('limite_registros')->nullable();
+            $table->integer('mostrar_por_pagina')->nullable();
             $table->double('valor_pix', 10, 2)->nullable();
             $table->string('chave_pix', 255)->nullable();
             $table->text('document')->nullable();

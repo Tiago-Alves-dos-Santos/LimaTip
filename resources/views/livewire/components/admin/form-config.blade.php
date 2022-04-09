@@ -19,9 +19,11 @@
         <div class="row">
             <div class="col-md-6">
                 <label for="fileResult" class="form-label">Resultado</label>
-                <a href="{{asset("storage/document/config/$document")}}" download>
-                    <i class="fa-solid fa-download"></i>
-                </a>
+                @if (!empty($document_string))
+                    <a href="{{asset("storage/document/config/$document_string")}}" download>
+                        <i class="fa-solid fa-download"></i>
+                    </a>
+                @endif
                 <input class="form-control @error('document') is-invalid @enderror" type="file" id="fileResult" wire:model.defer="document" accept=".txt, .doc, .docx, .pdf, .xls, .xlt">
                 <div class="invalid-feedback">
                     @error('document')
@@ -32,9 +34,11 @@
             </div>
             <div class="col-md-6">
                 <label for="fileTerm" class="form-label">Termos de Uso</label>
-                <a href="{{asset("storage/document/config/$document_term")}}" download>
-                    <i class="fa-solid fa-download"></i>
-                </a>
+                @if (!empty($document_term_string))
+                    <a href="{{asset("storage/document/config/$document_term_string")}}" download>
+                        <i class="fa-solid fa-download"></i>
+                    </a>
+                @endif
                 <input class="form-control @error('document_term') is-invalid @enderror" type="file" id="fileTerm" wire:model.defer="document_term" accept=".txt, .doc, .docx, .pdf">
                 <div class="invalid-feedback">
                     @error('document_term')

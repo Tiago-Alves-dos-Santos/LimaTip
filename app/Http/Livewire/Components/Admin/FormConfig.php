@@ -17,6 +17,8 @@ class FormConfig extends Component
     public $document = null;
     public $document_term = null;
 
+    public $document_string = null;
+    public $document_term_string = null;
 
     public $object = null;
     protected $listeners = [
@@ -24,7 +26,7 @@ class FormConfig extends Component
     ];
     protected $rules = [
         'limite_registros' => 'required|integer|min:0',
-        'valor_pix' => 'required|numeric',
+        'valor_pix' => 'required',
         'chave_pix' => 'required',
         'document' => 'nullable|file|mimes:txt,doc,docx,pdf,xls,xlt|max:20480',//20mb - 1mb= 1024'
         'document_term' => 'nullable|file|mimes:txt,doc,docx,pdf|max:5120' //5mb
@@ -32,19 +34,23 @@ class FormConfig extends Component
 
     public function mount()
     {
+        $this->refreshData();
+    }
+
+    public function refreshData()
+    {
         $this->object = Configuracao::find(1);
         $this->limite_registros = $this->object->limite_registros;
-        $this->valor_pix = $this->object->valor_pix;
+        $this->valor_pix = Config::getDbMoney($this->object->valor_pix);
         $this->chave_pix = $this->object->chave_pix;
-        $this->document = $this->object->document;
-        $this->document_term = $this->object->document_term;
-
+        $this->document_string = $this->object->document;
+        $this->document_term_string = $this->object->document_term;
     }
 
     public function reload()
     {
         $this->emit('config-reload');
-        $this->mount();
+        $this->refreshData();
     }
 
     public function save()
@@ -53,7 +59,7 @@ class FormConfig extends Component
         try{
             Configuracao::where('id', 1)->update([
                 'limite_registros' => $this->limite_registros,
-                'valor_pix' => $this->valor_pix,
+                'valor_pix' => Config::convertToMoney($this->valor_pix),
                 'chave_pix' => $this->chave_pix,
             ]);
             if(!empty($this->document)){//fazer upload

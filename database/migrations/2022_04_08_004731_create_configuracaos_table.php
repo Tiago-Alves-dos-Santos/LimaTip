@@ -17,7 +17,9 @@ class CreateConfiguracaosTable extends Migration
             $table->id();
             $table->integer('limite_registros');
             $table->double('valor_pix', 10, 2);
-            $table->text('documento');
+            $table->string('chave_pix', 255);
+            $table->text('document');
+            $table->text('document_term');
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at', $precision = 0);
         });

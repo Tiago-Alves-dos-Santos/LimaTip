@@ -4,6 +4,8 @@ namespace App\Http\Livewire\Components\Home;
 
 use Livewire\Component;
 use App\Models\Registro;
+use App\Models\Configuracao;
+use App\Classes\Configuracao as Config;
 
 class FormData extends Component
 {
@@ -11,6 +13,14 @@ class FormData extends Component
     public $term_accepeted = '';
     public $nome = null;
     public $telefone = null;
+
+    public $toast_type = ['success' => 0,'info' => 1,'warning' => 2,'error' => 3];
+    public $msg_toast = [
+        "title" => '',
+        "information" => '',
+        "type" => 1,
+        "time" => Config::TIME_TOAST
+    ];
 
     protected $rules = [
         'nome' => 'required|min:5',
@@ -34,14 +44,30 @@ class FormData extends Component
 
     public function save()
     {
+        // $this->msg_toast['title'] = 'Atenção!';
+        //             $this->msg_toast['information'] = "Cadastro negado <br> CRM: {$this->crm} já existente no banco!";
+        //             $this->msg_toast['type'] = $this->toast_type['warning'];
         //dd("aq");
         $this->validate();
         try{
-            Registro::create([
-                'nome' => mb_strtoupper($this->nome),
-                'telefone' => $this->telefone
-            ]);
-            $this->reset(['nome', 'telefone','term_accepeted']);
+            $configuracao = Configuracao::find(1);
+            if(Registro::count() >= $configuracao->limite_registros){
+                $this->msg_toast['title'] = 'Atenção!';
+                $this->msg_toast['information'] = "O limite diário já foi alcançado! \n <br> Tente novamente outro dia!";
+                $this->msg_toast['type'] = $this->toast_type['success'];
+                $this->emit('footer_showToast', $this->msg_toast);
+            }else{
+                Registro::create([
+                    'nome' => mb_strtoupper($this->nome),
+                    'telefone' => $this->telefone
+                ]);
+                $this->reset(['nome', 'telefone','term_accepeted']);
+                $this->msg_toast['title'] = 'Sucesso!';
+                $this->msg_toast['information'] = "Seu registro foi enviado com sucesso! \n <br> Aguarde a nossa ligação!";
+                $this->msg_toast['type'] = $this->toast_type['success'];
+                $this->emit('footer_showToast', $this->msg_toast);
+            }
+
         }catch(\Exception $e){
             dd($e->getMessage());
         }

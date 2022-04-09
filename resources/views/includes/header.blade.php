@@ -7,4 +7,10 @@
     @livewireStyles()
     {{-- jquery --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {{-- jquery mask --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.8/jquery.mask.min.js" integrity="sha512-hAJgR+pK6+s492clbGlnrRnt2J1CJK6kZ82FZy08tm6XG2Xl/ex9oVZLE6Krz+W+Iv4Gsr8U2mGMdh0ckRH61Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{-- font awessome 6 --}}
+    <script src="https://kit.fontawesome.com/4ecb736ddb.js" crossorigin="anonymous"></script>
+    {{-- header.js --}}
+    <script src="{{asset('js/header.js')}}"></script>
 </head>

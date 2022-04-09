@@ -24,4 +24,11 @@
             </tbody>
         </table>
     </div>
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-end">
+            <div style="overflow-x: auto">
+                {{$registros->links()}}
+            </div>
+        </div>
+    </div>
 </div>

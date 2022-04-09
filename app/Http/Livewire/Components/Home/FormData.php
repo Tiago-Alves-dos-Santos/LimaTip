@@ -54,7 +54,7 @@ class FormData extends Component
             if(Registro::count() >= $configuracao->limite_registros){
                 $this->msg_toast['title'] = 'Atenção!';
                 $this->msg_toast['information'] = "O limite diário já foi alcançado! \n <br> Tente novamente outro dia!";
-                $this->msg_toast['type'] = $this->toast_type['success'];
+                $this->msg_toast['type'] = $this->toast_type['warning'];
                 $this->emit('footer_showToast', $this->msg_toast);
             }else{
                 Registro::create([

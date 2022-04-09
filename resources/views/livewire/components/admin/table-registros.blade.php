@@ -10,21 +10,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>ZuckerBerg</td>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+                @forelse ($registros as $value)
+                    <tr>
+                        <td>{{$value->nome}}</td>
+                        <td>{{$value->telefone}}</td>
+                        <td>{{date('d/m/Y', strtotime($value->created_at))}}</td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="3" class="text-center" style="font-weight: bolder">N/A</td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </div>

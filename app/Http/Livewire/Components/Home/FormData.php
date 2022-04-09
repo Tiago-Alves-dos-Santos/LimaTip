@@ -44,10 +44,6 @@ class FormData extends Component
 
     public function save()
     {
-        // $this->msg_toast['title'] = 'Atenção!';
-        //             $this->msg_toast['information'] = "Cadastro negado <br> CRM: {$this->crm} já existente no banco!";
-        //             $this->msg_toast['type'] = $this->toast_type['warning'];
-        //dd("aq");
         $this->validate();
         try{
             $configuracao = Configuracao::find(1);

@@ -4,36 +4,26 @@
         {{-- tabela de pix feito --}}
         <div class="row mt-3">
             <div class="col-md-12">
-                @component('components.sectionTitle', [
-                    'title' => 'Registros',
-                    ])
-                @endcomponent
+                <x-section-title title="Registros"/>
             </div>
             <div class="col-md-12 mt-3">
-                @component('components.card', [
-                    'title' => 'Pix enviados',
-                    ])
+                <x-card title='Pix enviados'>
                     <livewire:components.admin.table-registros>
-                @endcomponent
+                </x-card>
             </div>
         </div>
         {{-- fim tabela de pix --}}
         {{-- configuração de horarios --}}
         <div class="row mt-3">
             <div class="col-md-12">
-                @component('components.sectionTitle', [
-                    'title' => 'Disponibilidade',
-                    ])
-                @endcomponent
+                <x-section-title title="Disponibilidade"/>
             </div>
             <div class="col-md-12 mt-3">
-                @component('components.card', [
-                    'title' => 'Horário',
-                    ])
+                <x-card title='Horário'>
                     <div class="container-form">
                         <livewire:components.admin.form-disponibilidade>
                     </div>
-                @endcomponent
+                </x-card>
             </div>
         </div>
         {{-- fim configuração de horarios --}}
@@ -41,19 +31,14 @@
         {{-- configuração de de registros e termos --}}
         <div class="row mt-3">
             <div class="col-md-12">
-                @component('components.sectionTitle', [
-                    'title' => 'Geral',
-                    ])
-                @endcomponent
+                <x-section-title title="Geral"/>
             </div>
             <div class="col-md-12 mt-3 mb-3">
-                @component('components.card', [
-                    'title' => 'Configuração',
-                    ])
+                <x-card title='Configuração'>
                     <div class="container-form">
                         <livewire:components.admin.form-config>
                     </div>
-                @endcomponent
+                </x-card>
             </div>
         </div>
         {{-- fim onfiguração de de registros e termos --}}

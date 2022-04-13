@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Disponibilidade as DisponibilidadeModel;
 use Illuminate\Console\Command;
 
 class Disponibilidade extends Command
@@ -37,6 +38,16 @@ class Disponibilidade extends Command
      */
     public function handle()
     {
-        return 0;
+        $disponibilidade = DisponibilidadeModel::find(1);
+        $result = DisponibilidadeModel::verifyDisponibility($disponibilidade->disponibilidade);
+        if($result == 'sim'){
+            DisponibilidadeModel::where('id', 1)->update([
+                'disponivel_status' => 'sim'
+            ]);
+        }else{
+            DisponibilidadeModel::where('id', 1)->update([
+                'disponivel_status' => 'nao'
+            ]);
+        }
     }
 }

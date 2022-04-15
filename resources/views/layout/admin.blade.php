@@ -18,7 +18,10 @@
             <a class="nav-link" href="{{route('view.admin.profile')}}" id="page_profile">Perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sair</a>
+            <a class="nav-link" target="_blank" href="{{route('index')}}">Site</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('controller.logout')}}">Sair</a>
           </li>
           {{-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

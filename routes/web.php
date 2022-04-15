@@ -27,3 +27,4 @@ Route::get('/admin/home', function () {
 Route::get('/admin/profile', function () {
     return view('admin.profile');
 })->name('view.admin.profile');
+

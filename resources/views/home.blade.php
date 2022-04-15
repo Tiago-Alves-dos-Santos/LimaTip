@@ -34,17 +34,14 @@
     @if ($disponibilidade->disponivel == 'sim')
     <div class="row mb-3">
         <div class="col-md-12 winner">
-            <img src="{{asset('img/winner.gif')}}" alt="">
+            <img src="{{asset('img/winner_two.gif')}}" alt="">
         </div>
     </div>
     @endif
     <div class="row">
         <div class="col-md-12 view-doc">
 
-            {{-- <iframe src ="{{ asset('storage/documents/exel.pdf') }}" width="1000px" height="600px"></iframe> --}}
-            <iframe src="https://docs.google.com/spreadsheets/d/1J8-eRtOKkQ7o41zeGu10Ba1yowgDIV_nHd5zMYTcKWU/edit#gid=2118056571&embedded=true" frameborder="0"></iframe>
-
-            {{-- <iframe src="https://docs.google.com/gview?url={{ asset('storage/documents/Terms/'.$documentTerm->document) }}&embedded=true" frameborder="0"></iframe> --}}
+            <iframe src="https://docs.google.com/gview?url={{ asset('storage/documents/Terms/'.$configuracao->document) }}&embedded=true" frameborder="0"></iframe>
         </div>
     </div>
 

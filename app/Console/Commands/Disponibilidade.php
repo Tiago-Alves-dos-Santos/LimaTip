@@ -2,8 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Disponibilidade as DisponibilidadeModel;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
+use App\Models\Disponibilidade as DisponibilidadeModel;
 
 class Disponibilidade extends Command
 {

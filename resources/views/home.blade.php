@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-md-12 info-play">
             <div>
-                <h1>Já saiu a boa de hj?</h1>
+                <h1>Já saiu a boa de hoje?</h1>
             </div>
             <div class="info-opcoes">
                 <div class="@if($disponibilidade->disponivel == 'sim') active @endif">
@@ -40,14 +40,25 @@
     @endif
     <div class="row">
         <div class="col-md-12 view-doc">
-
+            @if($disponibilidade->disponivel == 'sim')
             <iframe src="https://docs.google.com/gview?url={{ asset('storage/documents/Terms/'.$configuracao->document) }}&embedded=true" frameborder="0"></iframe>
+            @else
+            <div class="text-not-document" style="color: white">
+                <h1 class="icon">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                </h1>
+                <h1 class="text-data">
+                    VOLTE NOVAMENTE MAIS TARDE, PARA RECEBER AS DICAS DE HOJE!
+                </h1>
+            </div>
+            @endif
         </div>
     </div>
 
     <div class="row" style="background-color: #147350;">
         <div class="col-md-12 title-form">
-            <h1 class="text-center mt-3">PEÇA JÁ SUA DICA!<br> ATÉ ÀS
+            @if ($disponibilidade->disponivel_status == 'sim')
+            <h1 class="text-center mt-3">FAÇA SUA APOSTA!<br> ATÉ ÀS
                 <span style="color: #F2E41B">
                     {{date('H:i', strtotime($disponibilidade->disponibilidade))}}
                 </span>
@@ -56,8 +67,22 @@
                     {{date('d/m/Y', strtotime($disponibilidade->disponibilidade))}}
                 </span>!
             </h1>
+            @else
+            <h1 class="text-center mt-3">HORÁRIO FINALIZADO!<br> ÀS
+                <span style="color: #820000">
+                    {{date('H:i', strtotime($disponibilidade->disponibilidade))}}
+                </span>
+                DO DIA
+                <span style="color: #820000">
+                    {{date('d/m/Y', strtotime($disponibilidade->disponibilidade))}}
+                </span>
+                <br/>
+                VOLTE NOVAMENTE AMANHÃ!
+            </h1>
+            @endif
         </div>
     </div>
+    @if ($disponibilidade->disponivel_status == 'sim')
     <div class="row" style="background-color: #147350;">
         <div class="col-md-12" style="padding: 20px; display: flex; justify-content: center; align-content:center; align-items:center">
             <div style="width: 500px">
@@ -65,6 +90,7 @@
             </div>
         </div>
     </div>
+    @endif
 
 
 </div>

@@ -58,6 +58,12 @@ div#home{
         img{
             width: 400px;
         }
+        /*Mobile*/
+        @media (max-width: 399px) {
+            img{
+                width: 320px;
+            }
+        }
     }
     div.view-doc{
         display: flex;
@@ -67,6 +73,17 @@ div#home{
             width: 90%;
             height: 470px;
             margin: 40px 0px 40px 0px;
+        }
+        div.text-not-document{
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+            padding: 20px 0px;
+            h1.icon {
+                font-size: 150px;
+            }
         }
     }
     div.title-form{

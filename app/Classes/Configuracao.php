@@ -2,6 +2,12 @@
 namespace App\Classes;
 class Configuracao
 {
+    /******************plugins********************/
+    //toast
+    const TIME_TOAST = 10000;
+
+
+    /*************** arquivos *****************/
     const CONFIG_DOCUMENT_STORAGE = 'public/document/config/';
     const CONFIG_TERM_STORAGE = 'public/document/config/';
 

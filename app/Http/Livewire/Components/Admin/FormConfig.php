@@ -12,6 +12,7 @@ class FormConfig extends Component
 {
     use WithFileUploads;
     public $limite_registros = null;
+    public $mostrar_por_pagina = null;
     public $valor_pix = null;
     public $chave_pix = null;
     public $document = null;
@@ -26,6 +27,7 @@ class FormConfig extends Component
     ];
     protected $rules = [
         'limite_registros' => 'required|integer|min:0',
+        'mostrar_por_pagina' => 'required|integer|min:0',
         'valor_pix' => 'required',
         'chave_pix' => 'required',
         'document' => 'nullable|file|mimes:txt,doc,docx,pdf,xls,xlt|max:20480',//20mb - 1mb= 1024'
@@ -41,6 +43,7 @@ class FormConfig extends Component
     {
         $this->object = Configuracao::find(1);
         $this->limite_registros = $this->object->limite_registros;
+        $this->mostrar_por_pagina = $this->object->mostrar_por_pagina;
         $this->valor_pix = Config::getDbMoney($this->object->valor_pix);
         $this->chave_pix = $this->object->chave_pix;
         $this->document_string = $this->object->document;
@@ -50,6 +53,7 @@ class FormConfig extends Component
     public function reload()
     {
         $this->emit('config-reload');
+        $this->emitTo("components.admin.table-registros",'registros-reload');
         $this->refreshData();
     }
 
@@ -59,6 +63,7 @@ class FormConfig extends Component
         try{
             Configuracao::where('id', 1)->update([
                 'limite_registros' => $this->limite_registros,
+                'mostrar_por_pagina' => $this->mostrar_por_pagina,
                 'valor_pix' => Config::convertToMoney($this->valor_pix),
                 'chave_pix' => $this->chave_pix,
             ]);

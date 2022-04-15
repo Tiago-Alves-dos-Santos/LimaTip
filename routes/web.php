@@ -18,7 +18,7 @@ Route::get('/', [Home::class, 'index'])->name('index');
 
 Route::get('/admin', function () {
     return view('admin.auth.login');
-});
+})->name('login');
 
 
 Route::get('/admin/home', function () {

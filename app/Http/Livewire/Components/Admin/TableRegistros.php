@@ -13,7 +13,20 @@ class TableRegistros extends Component
     protected $paginationTheme = 'bootstrap';
     protected $listeners = [
         'registros-reload' => '$refresh',
+        'truncateRegistros'
     ];
+
+    public function truncateRegistros()
+    {
+        Registro::truncate();
+        $this->emit('registros-reload');
+    }
+
+    public function showQuestionTruncateRegistros()
+    {
+        $this->emit('components.admin.table-registros_showQuestionDelete', 'Deseja continuar', 'Excluir todos os registros existentes?');
+    }
+
     public function render()
     {
         return view('livewire.components.admin.table-registros',[

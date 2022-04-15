@@ -12,3 +12,25 @@ function showToast(title,information, type_number, time){
 
     })
 }
+
+function showQuestion(titulo, information, callback) {
+    $.confirm({
+        title: titulo,
+        content: information,
+        type: 'dark',
+        typeAnimated: true,
+        icon: 'fas fa-question-circle',
+        buttons: {
+            SIM: {
+                text: 'SIM',
+                action: callback
+            },
+            NAO: {
+                text: 'NÃO',
+                btnClass: 'btn-dark',
+                action: function(){
+                }
+            }
+        }
+    });
+ }

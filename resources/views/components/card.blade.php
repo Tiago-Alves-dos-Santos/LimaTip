@@ -1,11 +1,6 @@
 <div class="card">
-    <div class="card-header d-flex justify-content-between align-items-center">
+    <div class="card-header">
       {{$title}}
-      @if ($component == 'table-home')
-        <button type="button" class="btn btn-danger">
-            Limpar registros
-        </button>
-      @endif
     </div>
     <div class="card-body">
       {{$slot}}

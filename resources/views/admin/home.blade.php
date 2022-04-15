@@ -7,7 +7,7 @@
                 <x-section-title title="Registros"/>
             </div>
             <div class="col-md-12 mt-3">
-                <x-card title='Pix enviados' component='table-home'>
+                <x-card title='Pix enviados'>
                     <livewire:components.admin.table-registros>
                 </x-card>
             </div>

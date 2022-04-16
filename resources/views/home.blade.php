@@ -54,7 +54,31 @@
             @endif
         </div>
     </div>
-
+    @if ($disponibilidade->disponivel_status == 'sim')
+    <div class="row info-pix" style="background-color: #713c2d;">
+        <div class="col-md-12">
+            <div class="titles" style="border:1px solid white">
+                <h1>
+                    CHAVE PIX E VALOR
+                </h1>
+                <h2>
+                    TRANSFIRA
+                    <span style="color: #ff670f">
+                        R$ {{number_format($configuracao->valor_pix, 2 ,',','.');}}
+                    </span>
+                    PARA CHAVE
+                    <span style="color: #ff670f">
+                        {{$configuracao->chave_pix}}</span>.
+                </h2>
+                <h3>
+                    MEU NOME COMPLETO:
+                    <span style="color: #ff670f">
+                    {{\App\Models\User::find(1)->name}}</span>.
+                </h3>
+            </div>
+        </div>
+    </div>
+    @endif
     <div class="row" style="background-color: #147350;">
         <div class="col-md-12 title-form">
             @if ($disponibilidade->disponivel_status == 'sim')

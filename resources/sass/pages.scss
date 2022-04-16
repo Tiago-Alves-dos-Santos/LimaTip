@@ -86,6 +86,18 @@ div#home{
             }
         }
     }
+    div.info-pix{
+        font-family: 'WinnerSans';
+        color:white;
+        padding: 15px 0px;
+        div.titles{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items:center;
+            padding: 15px 0px;
+        }
+    }
     div.title-form{
         color:white;
         h1{

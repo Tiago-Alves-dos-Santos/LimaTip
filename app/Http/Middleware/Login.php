@@ -16,6 +16,14 @@ class Login
      */
     public function handle(Request $request, Closure $next)
     {
+        if (session()->has('login') == false || !session('login')) {
+            //cria uma msg vazia ou null, nenhuma msg de aviso é criada
+                session([
+                    'msg_login' => 'Acesso negado a página. Faça login!'
+                ]);
+            //
+            return redirect()->route('login');
+        }
         return $next($request);
     }
 }

@@ -58,6 +58,12 @@ div#home{
         img{
             width: 400px;
         }
+        /*Mobile*/
+        @media (max-width: 399px) {
+            img{
+                width: 320px;
+            }
+        }
     }
     div.view-doc{
         display: flex;
@@ -67,6 +73,47 @@ div#home{
             width: 90%;
             height: 470px;
             margin: 40px 0px 40px 0px;
+        }
+        div.text-not-document{
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+            padding: 20px 0px;
+            h1.icon {
+                font-size: 150px;
+            }
+        }
+    }
+    @keyframes title_size{
+        0%{
+            transform:scale(1.5);
+        }
+        50%{
+            transform:translate(1);
+        }
+        100%{
+            transform:translate(0.5);
+        }
+    }
+    div.info-pix{
+        font-family: 'WinnerSans';
+        color:white;
+        padding: 15px 0px;
+        div.titles{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items:center;
+            padding: 15px 0px;
+            h1.animate-title{
+                animation-name: title_size;/*nome da animação*/
+                animation-direction: alternate;
+                animation-duration: 1.5s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
         }
     }
     div.title-form{

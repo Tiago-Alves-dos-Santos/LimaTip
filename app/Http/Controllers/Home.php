@@ -17,4 +17,13 @@ class Home extends Controller
             'configuracao'
         ));
     }
+
+    public function login(Request $request)
+    {
+        if(session()->has('login') && session('login')){
+            return redirect()->route('view.admin.home');
+        }else{
+           return view('admin.auth.login');
+        }
+    }
 }

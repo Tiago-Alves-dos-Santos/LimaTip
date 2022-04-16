@@ -16,14 +16,14 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form>
+    <form method="POST" action="{{route('controller.login')}}">
         <h3>SEJA BEM VINDO!</h3>
-
+        @csrf
         <label for="username">Email:</label>
-        <input type="text" placeholder="" id="username" >
+        <input type="text" placeholder="" id="username" name="email">
 
         <label for="password">Senha:</label>
-        <input type="password" placeholder="" id="password">
+        <input type="password" placeholder="" id="password" name="senha">
 
         <button>Entrar</button>
         {{-- <div class="social">

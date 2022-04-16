@@ -58,10 +58,10 @@
     <div class="row info-pix" style="background-color: #713c2d;">
         <div class="col-md-12">
             <div class="titles" style="border:1px solid white">
-                <h1>
+                <h1 class="animate-title">
                     CHAVE PIX E VALOR
                 </h1>
-                <h2>
+                <h2 style="width: 100%; text-align: center">
                     TRANSFIRA
                     <span style="color: #ff670f">
                         R$ {{number_format($configuracao->valor_pix, 2 ,',','.');}}

@@ -1,0 +1,126 @@
+/********************************HOME*******************************************/
+div#home{
+    div.home-advertising{
+        background-image: url('../../public/img/empty_adversenting_twoo.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        div.home-conatiner-title{
+            position: relative;
+            width: 100%;
+            height: 450px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            align-content: center;
+            h1{
+                margin-right: 8%;
+                font-family: 'WinnerSans';
+                font-size: 100px;
+                span{
+                    color: white;
+                    span{
+                        color: #F2E30F;
+                    }
+                }
+            }
+        }
+    }
+    div.info-play{
+        font-family: 'WinnerSans';
+        min-height: 280px;
+        color:#1f7314;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        align-content:center;
+        div.info-opcoes{
+            display: flex;
+            flex-direction: row;
+            h1,h4{
+                font-size: 50px;
+            }
+            div{
+                margin: 20px 20px 0px 20px;
+                border: 3px solid #1f7314;
+                padding: 10px 30px 0px 30px;
+            }
+            div.active{
+                color:white;
+                background-color: #1f7314;
+            }
+        }
+    }
+    div.winner{
+        display: flex;
+        justify-content: center;
+        img{
+            width: 400px;
+        }
+        /*Mobile*/
+        @media (max-width: 399px) {
+            img{
+                width: 320px;
+            }
+        }
+    }
+    div.view-doc{
+        display: flex;
+        justify-content: center;
+        background-color:#262626;
+        iframe{
+            width: 90%;
+            height: 470px;
+            margin: 40px 0px 40px 0px;
+        }
+        div.text-not-document{
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+            padding: 20px 0px;
+            h1.icon {
+                font-size: 150px;
+            }
+        }
+    }
+    @keyframes title_size{
+        0%{
+            transform:scale(1.5);
+        }
+        50%{
+            transform:translate(1);
+        }
+        100%{
+            transform:translate(0.5);
+        }
+    }
+    div.info-pix{
+        font-family: 'WinnerSans';
+        color:white;
+        padding: 15px 0px;
+        div.titles{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items:center;
+            padding: 15px 0px;
+            h1.animate-title{
+                animation-name: title_size;/*nome da animação*/
+                animation-direction: alternate;
+                animation-duration: 1.5s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+        }
+    }
+    div.title-form{
+        color:white;
+        h1{
+            font-family: 'WinnerSans';
+            font-size: 50px;
+        }
+    }
+}

@@ -59,7 +59,7 @@ class FormData extends Component
                 ]);
                 $this->reset(['nome', 'telefone','term_accepeted']);
                 $this->msg_toast['title'] = 'Sucesso!';
-                $this->msg_toast['information'] = "Seu registro foi enviado com sucesso! \n <br> Aguarde a nossa ligação!";
+                $this->msg_toast['information'] = "Seu registro foi enviado com sucesso! \n <br> Aguarde a nosso contato!";
                 $this->msg_toast['type'] = $this->toast_type['success'];
                 $this->emit('footer_showToast', $this->msg_toast);
             }

@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-md-12 info-play">
             <div>
-                <h1>Já saiu a boa de hoje?</h1>
+                <h1>Já saiu a braba de hoje?</h1>
             </div>
             <div class="info-opcoes">
                 <div class="@if($disponibilidade->disponivel == 'sim') active @endif">

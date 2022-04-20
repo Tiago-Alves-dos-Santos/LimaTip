@@ -9,7 +9,9 @@
                     @if ($disponivel_status == 'sim')
                         <span class="text-success">(Disponível)</span>
                     @else
-                        <span class="text-danger">(Indisponível)</span>
+                        <span class="text-danger">(Indisponível) <br/>
+                            Motivo: Prazo de data atingido e(ou) limite de registros antigido!
+                        </span>
                     @endif
                 </label>
                 <input type="datetime-local" class="form-control @error('disponibilidade') is-invalid @enderror" wire:model.defer="disponibilidade"

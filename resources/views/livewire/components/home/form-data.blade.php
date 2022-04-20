@@ -28,9 +28,15 @@
             <div class="col-md-12">
                 <div class="form-check">
                     <input class="form-check-input @error('term_accepeted') is-invalid @enderror" type="checkbox" value="1" id="flexCheckDefault" wire:model.defer="term_accepeted" required>
+                    @if (!empty($term_name))
                     <label class="form-check-label" for="flexCheckDefault">
-                      Li e aceito os <a href="{{asset("storage/document/config/$term_name")}}" target="_blank">Termos de uso!</a>
+                        Li e aceito os <a href="{{asset("storage/document/config/$term_name")}}" target="_blank">Termos de uso!</a>
                     </label>
+                    @else
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Li e aceito os <a href="" style="color: red; font-size: 20px; font-weight: bolder">SEM TERMO!!!!</a>
+                      </label>
+                    @endif
                 </div>
             </div>
         </div>
@@ -58,5 +64,14 @@
         </div>
     </form>
 
-
+    <script>
+        $(function(){
+            Livewire.on('components.home.form-data_showToast',(msg_toast) => {
+                showToast(msg_toast.title, msg_toast.information, msg_toast.type, msg_toast.time);
+                setTimeout(() => {
+                    window.location.reload();
+                }, msg_toast.time);
+            });
+        });
+    </script>
 </div>

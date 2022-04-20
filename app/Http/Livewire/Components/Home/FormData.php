@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Components\Home;
 use Livewire\Component;
 use App\Models\Registro;
 use App\Models\Configuracao;
+use App\Models\Disponibilidade;
 use App\Classes\Configuracao as Config;
 
 class FormData extends Component
@@ -57,10 +58,27 @@ class FormData extends Component
                     'nome' => mb_strtoupper($this->nome),
                     'telefone' => $this->telefone
                 ]);
+                //verficar se limite foi alcançado apos o ultimo cadastro
+                $result = Registro::isLimitRegister();
+                if($result){
+                    Disponibilidade::where('id', 1)->update([
+                        'disponivel_status' => 'nao'
+                    ]);
+                    $this->msg_toast['title'] = 'Atenção!';
+                    $this->msg_toast['information'] = "O limite diário acaba de ser atingido após esse envio! \n <br> Não tranfira mais pix, pois o seu registro não ficara salvo no sistema!";
+                    $this->msg_toast['type'] = $this->toast_type['warning'];
+                    $this->msg_toast['time'] = 15000;
+                    $this->emit('components.home.form-data_showToast', $this->msg_toast);
+                }else{
+                    Disponibilidade::where('id', 1)->update([
+                        'disponivel_status' => 'sim'
+                    ]);
+                }
                 $this->reset(['nome', 'telefone','term_accepeted']);
                 $this->msg_toast['title'] = 'Sucesso!';
                 $this->msg_toast['information'] = "Seu registro foi enviado com sucesso! \n <br> Aguarde a nosso contato!";
                 $this->msg_toast['type'] = $this->toast_type['success'];
+                $this->msg_toast['time'] = Config::TIME_TOAST;
                 $this->emit('footer_showToast', $this->msg_toast);
             }
 

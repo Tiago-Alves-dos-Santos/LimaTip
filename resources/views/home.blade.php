@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-md-12 info-play">
             <div>
-                <h1>Já saiu a boa de hoje?</h1>
+                <h1>Já saiu a braba de hoje?</h1>
             </div>
             <div class="info-opcoes">
                 <div class="@if($disponibilidade->disponivel == 'sim') active @endif">
@@ -92,16 +92,8 @@
                 </span>!
             </h1>
             @else
-            <h1 class="text-center mt-3">HORÁRIO FINALIZADO!<br> ÀS
-                <span style="color: #820000">
-                    {{date('H:i', strtotime($disponibilidade->disponibilidade))}}
-                </span>
-                DO DIA
-                <span style="color: #820000">
-                    {{date('d/m/Y', strtotime($disponibilidade->disponibilidade))}}
-                </span>
-                <br/>
-                VOLTE NOVAMENTE AMANHÃ!
+            <h1 class="text-center mt-3" style="text-transform: uppercase; padding: 50px 0px;">
+                Por hoje não estamos mais disponíveis, volte amanhã novamente!
             </h1>
             @endif
         </div>

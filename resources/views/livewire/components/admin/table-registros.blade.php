@@ -32,6 +32,13 @@
                     </tr>
                 @endforelse
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="text-center">
+                         {{\App\Models\Registro::count()}} / {{\App\Models\Configuracao::find(1)->limite_registros}}
+                    </td>
+                </tr>
+            </tfoot>
         </table>
     </div>
     <div class="row">

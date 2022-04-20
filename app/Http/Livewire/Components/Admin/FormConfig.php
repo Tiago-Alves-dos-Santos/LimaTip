@@ -81,7 +81,7 @@ class FormConfig extends Component
                 if(!empty($this->object->document_term) && Storage::exists(Config::CONFIG_TERM_STORAGE.$this->object->document_term)){
                     Storage::delete(Config::CONFIG_TERM_STORAGE.$this->object->document_term);
                 }
-                $name = 'term.'.$this->document->extension();
+                $name = 'term.'.$this->document_term->extension();
                 $this->document_term->storeAs(Config::CONFIG_TERM_STORAGE, $name);
                 Configuracao::where('id', 1)->update([
                     'document_term' => $name,

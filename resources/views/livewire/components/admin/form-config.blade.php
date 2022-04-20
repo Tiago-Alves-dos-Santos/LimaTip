@@ -28,7 +28,7 @@
                         <i class="fa-solid fa-download"></i>
                     </a>
                 @endif
-                <input class="form-control @error('document') is-invalid @enderror" type="file" id="fileResult" wire:model.defer="document" accept=".txt, .doc, .docx, .pdf, .xls, .xlt">
+                <input class="form-control @error('document') is-invalid @enderror" type="file" id="fileResult" wire:model.defer="document" accept=".txt, .doc, .docx, .pdf, .xls, .xlt, .xlsx">
                 <div class="invalid-feedback">
                     @error('document')
                         {{$message}}

@@ -30,7 +30,7 @@ class FormConfig extends Component
         'mostrar_por_pagina' => 'required|integer|min:0',
         'valor_pix' => 'required',
         'chave_pix' => 'required',
-        'document' => 'nullable|file|mimes:txt,doc,docx,pdf,xls,xlt|max:20480',//20mb - 1mb= 1024'
+        'document' => 'nullable|file|mimes:txt,doc,docx,pdf,xls,xlt,xlsx|max:20480',//20mb - 1mb= 1024'
         'document_term' => 'nullable|file|mimes:txt,doc,docx,pdf|max:5120' //5mb
     ];
 
